@@ -1,0 +1,72 @@
+.list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  margin: 10px;
+}
+
+.list-item:hover {
+  cursor: pointer;
+}
+
+.list-item:hover .listItem-name {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.17, 0.62, 0.08, 0.9);
+  transition: -webkit-transform 1s cubic-bezier(0.17, 0.62, 0.08, 0.9);
+  transition: transform 1s cubic-bezier(0.17, 0.62, 0.08, 0.9);
+  transition: transform 1s cubic-bezier(0.17, 0.62, 0.08, 0.9), -webkit-transform 1s cubic-bezier(0.17, 0.62, 0.08, 0.9);
+}
+
+.list-item:hover .name-container {
+  background-color: #940a0a;
+}
+
+.name-container {
+  background-color: #b80808;
+  height: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  margin-left: -60px;
+  z-index: -1;
+  border-radius: 10px;
+  border: 3px solid #383737;
+}
+
+.listItem-sprite {
+  max-width: 100px;
+  height: auto;
+}
+
+.listItem-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: white;
+  font-size: 1.3em;
+  margin-left: 75px;
+}
+
+.rounded-container {
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+  background-color: #3b474d;
+  border: 3px solid black;
+}
+/*# sourceMappingURL=list-item.style.css.map */
