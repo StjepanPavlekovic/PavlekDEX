@@ -1,0 +1,15 @@
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 50px 50px;
+  grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." ". . . .";
+}
+
+.container-wrap {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -29,9 +29,10 @@
   width: 210px;
   margin-top: -65px;
   padding-top: 10px;
-  z-index: -1;
-  border-radius: 10px;
-  border: 3px solid rgb(56, 55, 55);
+  //z-index: -1;
+  //border-radius: 10px;
+  //border: 3px solid rgb(56, 55, 55);
+  border-top: 3px solid black;
 }
 
 .listItem-sprite {
@@ -43,8 +44,17 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: white;
-  font-size: 1.3em;
-  margin-top: 50px;
+  font-size: 1.2em;
+  margin-top: 80px;
+}
+
+.larger-rounded-container {
+  width: 203px;
+  height: 203px;
+  border: 3px solid black;
+  border-radius: 100%;
+  position: absolute;
+  transform: translateY(-40px) translateX(0.5px);
 }
 
 .rounded-container {
@@ -56,5 +66,5 @@
   border-radius: 100%;
   z-index: 1;
   background-color: rgb(59, 71, 77);
-  border: 3px solid black;
+  //border: 3px solid black;
 }
