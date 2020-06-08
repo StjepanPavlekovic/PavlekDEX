@@ -36,3 +36,66 @@
     transform: rotate(360deg);
   }
 }
+
+.closer-left {
+  border-right: 3px solid black;
+  position: fixed;
+  height: 100%;
+  width: 50%;
+  background-color: yellow;
+  z-index: 2;
+  animation: 1s cubic-bezier(0.7, 0.11, 0.83, 0.67) 2s 1 slideToLeft;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes slideToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-110%);
+  }
+}
+
+.closer-right {
+  border-left: 3px solid black;
+  position: fixed;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  background-color: yellow;
+  z-index: 2;
+  animation: 1s cubic-bezier(0.7, 0.11, 0.83, 0.67) 2s 1 slideToRight;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes slideToRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+.spinner {
+  position: fixed;
+  background-image: url("./images/pokeball.png");
+  background-size: 250px 250px;
+  top: 40%;
+  left: 87%;
+  height: 250px;
+  width: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: rotation 2s 1 linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
