@@ -81,6 +81,25 @@ export default class Container extends Component {
             return <ListItem name={e.name} id={key} key={key} />;
           })}
         </div>
+        <div className="controls">
+          {this.state.previous ? (
+            <button
+              className="controls-button"
+              onClick={() => this.loadSet(false)}
+            >
+              Previous
+            </button>
+          ) : null}
+
+          {this.state.next ? (
+            <button
+              className="controls-button"
+              onClick={() => this.loadSet(true)}
+            >
+              Next
+            </button>
+          ) : null}
+        </div>
       </div>
     );
   }

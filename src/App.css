@@ -42,7 +42,7 @@
   position: fixed;
   height: 100%;
   width: 50%;
-  background-color: yellow;
+  background-color: rgb(56, 56, 56);
   z-index: 2;
   animation: 1s cubic-bezier(0.7, 0.11, 0.83, 0.67) 2s 1 slideToLeft;
   -webkit-animation-fill-mode: forwards;
@@ -53,7 +53,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-110%);
+    transform: translateX(-160%);
   }
 }
 
@@ -63,7 +63,7 @@
   left: 50%;
   height: 100%;
   width: 50%;
-  background-color: yellow;
+  background-color: rgb(56, 56, 56);
   z-index: 2;
   animation: 1s cubic-bezier(0.7, 0.11, 0.83, 0.67) 2s 1 slideToRight;
   -webkit-animation-fill-mode: forwards;
@@ -74,16 +74,16 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(110%);
+    transform: translateX(160%);
   }
 }
 
 .spinner {
-  position: fixed;
   background-image: url("./images/pokeball.png");
-  background-size: 250px 250px;
-  top: 40%;
-  left: 87%;
+  background-size: 320px 320px;
+  position: absolute;
+  right: -130px;
+  top: 35%;
   height: 250px;
   width: 250px;
   background-position: center;
