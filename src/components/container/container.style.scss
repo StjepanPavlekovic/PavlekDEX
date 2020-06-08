@@ -10,6 +10,43 @@
   padding-top: 50px;
   padding-bottom: 30px;
   width: 100%;
+  margin: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  margin-bottom: 80px;
+  margin-top: 80px;
+  width: 250px;
+  justify-content: space-around;
+}
+
+.controls-button {
+  width: 100px;
+  height: 40px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(94, 146, 245);
+
+  transition: transform 0.1s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(67, 113, 199);
+
+    transform: scale(1.05);
+    transition: transform 0.2s cubic-bezier(0.3, 0.86, 0.05, 1.07);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 }

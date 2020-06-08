@@ -10,6 +10,25 @@
   padding-top: 20px;
 }
 
+.loader {
+  background-image: url("../../images/pokeball.png");
+  background-size: 50px 50px;
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: rotation 1s infinite linear;
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+}
+
 .type {
   border: 1px solid black;
   width: 60px;

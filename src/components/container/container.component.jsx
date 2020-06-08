@@ -8,20 +8,45 @@ export default class Container extends Component {
 
     this.state = {
       pokemon: [],
-      currentPage: 0,
+      next: null,
+      previous: null,
     };
   }
 
-  componentDidMount() {
-    fetch("https://pokeapi.co/api/v2/pokemon")
+  initialLoad = () => {
+    fetch(
+      this.state.previous
+        ? this.state.next
+        : "https://pokeapi.co/api/v2/pokemon"
+    )
       .then((res) => res.json())
       .then((data) => {
         this.setState((state, props) => {
           return {
             pokemon: data.results,
+            next: data.next,
+            previous: data.previus,
           };
         });
       });
+  };
+
+  loadSet = (setToLoad) => {
+    fetch(setToLoad ? this.state.next : this.state.previous)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState((state, props) => {
+          return {
+            pokemon: data.results,
+            next: data.next,
+            previous: data.previous,
+          };
+        });
+      });
+  };
+
+  componentDidMount() {
+    this.initialLoad();
   }
 
   extractKey(str) {
@@ -31,6 +56,25 @@ export default class Container extends Component {
   render() {
     return (
       <div className="container-wrap">
+        <div className="controls">
+          {this.state.previous ? (
+            <button
+              className="controls-button"
+              onClick={() => this.loadSet(false)}
+            >
+              Previous
+            </button>
+          ) : null}
+
+          {this.state.next ? (
+            <button
+              className="controls-button"
+              onClick={() => this.loadSet(true)}
+            >
+              Next
+            </button>
+          ) : null}
+        </div>
         <div className="list-container">
           {this.state.pokemon.map((e) => {
             var key = this.extractKey(e.url);
