@@ -9,7 +9,11 @@ function App() {
       <div className="closer-left">
         <div className="spinner"></div>
       </div>
-      <Container />
+      <div className="app-container">
+        <div className="left-pillar"></div>
+        <Container />
+        <div className="right-pillar"></div>
+      </div>
     </div>
   );
 }

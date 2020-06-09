@@ -11,7 +11,6 @@ const ListItem = (props) => {
   var imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`;
   return (
     <div onClick={() => onClick(props.id)} className="list-item">
-      <div className="larger-rounded-container"></div>
       <div
         className="rounded-container"
         style={

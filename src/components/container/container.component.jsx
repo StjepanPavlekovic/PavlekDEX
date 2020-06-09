@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ListItem from "../list-item/list-item.component";
+import PokemonInfo from "../pokemon-info/pokemon-info.component";
 import "./container.style.scss";
 
 export default class Container extends Component {
@@ -56,6 +57,7 @@ export default class Container extends Component {
   render() {
     return (
       <div className="container-wrap">
+        <PokemonInfo />
         <div className="controls">
           {this.state.previous ? (
             <button
