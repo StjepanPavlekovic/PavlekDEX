@@ -11,6 +11,7 @@ export default class Container extends Component {
       pokemon: [],
       next: null,
       previous: null,
+      currentPokemon: null,
     };
   }
 
@@ -54,10 +55,33 @@ export default class Container extends Component {
     return str.split("/")[6];
   }
 
+  loadSelectedPokemon = (id) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState((state, props) => {
+          return {
+            currentPokemon: data,
+          };
+        });
+      });
+  };
+
+  clearPokemon = () => {
+    this.setState({
+      currentPokemon: null,
+    });
+  };
+
   render() {
     return (
       <div className="container-wrap">
-        <PokemonInfo />
+        {this.state.currentPokemon ? (
+          <PokemonInfo
+            pokemon={this.state.currentPokemon}
+            clearPokemon={this.clearPokemon}
+          />
+        ) : null}
         <div className="controls">
           {this.state.previous ? (
             <button
@@ -80,7 +104,14 @@ export default class Container extends Component {
         <div className="list-container">
           {this.state.pokemon.map((e) => {
             var key = this.extractKey(e.url);
-            return <ListItem name={e.name} id={key} key={key} />;
+            return (
+              <ListItem
+                name={e.name}
+                id={key}
+                key={key}
+                loadSelectedPokemon={this.loadSelectedPokemon}
+              />
+            );
           })}
         </div>
         <div className="controls">

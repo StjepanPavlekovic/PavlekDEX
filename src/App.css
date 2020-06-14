@@ -4,6 +4,12 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  position: relative;
 }
 
 .app-container {
@@ -37,7 +43,7 @@
   border-right: 3px solid black;
   position: fixed;
   height: 100%;
-  width: 50%;
+  width: 50vw;
   background-color: rgb(56, 56, 56);
   z-index: 2;
   animation: 1s cubic-bezier(1, 0, 0.53, 0.82) 2s 1 slideToLeft;
@@ -58,7 +64,7 @@
   position: fixed;
   left: 50%;
   height: 100%;
-  width: 50%;
+  width: 50vw;
   background-color: rgb(56, 56, 56);
   z-index: 2;
   animation: 1s cubic-bezier(1, 0, 0.53, 0.82) 2s 1 slideToRight;
