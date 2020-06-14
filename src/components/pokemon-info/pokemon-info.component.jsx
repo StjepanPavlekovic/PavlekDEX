@@ -3,6 +3,8 @@ import "./pokemon-info.style.scss";
 
 const PokemonInfo = ({ pokemon, clearPokemon }) => {
   var imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+  var height = pokemon.height / 10;
+  var weight = pokemon.weight / 10;
   return (
     <div className="info-popup">
       <div className="popup-background">
@@ -40,8 +42,8 @@ const PokemonInfo = ({ pokemon, clearPokemon }) => {
             </thead>
             <tbody>
               <tr>
-                <td>{pokemon.height} ft</td>
-                <td>{pokemon.weight} lbs</td>
+                <td>{height} m</td>
+                <td>{weight} kg</td>
               </tr>
             </tbody>
           </table>
