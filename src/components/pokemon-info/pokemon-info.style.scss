@@ -7,7 +7,8 @@
   width: 100%;
   height: 100%;
   z-index: 3;
-  background-color: rgba(61, 61, 61, 0);
+  background-color: rgba(51, 51, 51, 0);
+  backdrop-filter: blur(4px);
 
   animation: bgFade 0.5s;
   -webkit-animation-fill-mode: forwards;
@@ -27,8 +28,9 @@
   height: auto;
   min-width: 350px;
   max-width: 450px;
-  background-color: rgba(1, 1, 1, 0.9);
+  background-color: rgba(255, 255, 255, 1);
   padding-bottom: 30px;
+  border-radius: 10px;
 
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
@@ -100,9 +102,13 @@
   width: 30px;
   position: relative;
   background: url("../../images/close.png");
-  background-size: 30px 30px;
+  background-size: 40px 40px;
   left: 100%;
-  transform: translate(-110%, 10%);
+  transform: translate(-120%, 20%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  border-radius: 5px;
 
   &:hover {
     cursor: pointer;
@@ -117,8 +123,7 @@
   width: 150px;
   background-size: 125px;
   border-radius: 100%;
-  background-color: rgb(80, 90, 95);
-  border: 1px solid black;
+  background-color: rgb(205, 214, 218);
   margin: auto;
   margin-bottom: 20px;
 }
@@ -134,13 +139,13 @@
     font-size: 1.5em;
     font-family: "Poppins", sans-serif;
     padding-bottom: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   span {
     font-size: 1em;
     font-family: "Poppins", sans-serif;
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   table {
@@ -151,7 +156,7 @@
   th {
     font-size: 1em;
     font-family: "Poppins", sans-serif;
-    color: white;
+    color: rgb(0, 0, 0);
     td {
       padding: 10px;
     }
@@ -162,7 +167,7 @@
       text-align: center;
       font-size: 0.9em;
       font-family: "Poppins", sans-serif;
-      color: white;
+      color: rgb(0, 0, 0);
     }
   }
 }
