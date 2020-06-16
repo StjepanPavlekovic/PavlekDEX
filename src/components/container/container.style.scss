@@ -1,4 +1,5 @@
 .list-container {
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -19,33 +20,89 @@
 
 .controls {
   display: flex;
+  position: fixed;
+  top: 38%;
+  left: 50%;
   margin-bottom: 80px;
   margin-top: 80px;
-  width: 250px;
-  justify-content: space-around;
+  transform: translateX(-50%);
+  width: 70vw;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .controls-button {
-  width: 100px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 1em;
+  font-weight: 800;
+  font-size: 2em;
   color: white;
   border: none;
+  border-radius: 50%;
   background-color: rgb(94, 146, 245);
-
+  margin: 5px;
   transition: transform 0.1s;
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
 
   &:hover {
     cursor: pointer;
     background-color: rgb(67, 113, 199);
-
     transform: scale(1.05);
     transition: transform 0.2s cubic-bezier(0.3, 0.86, 0.05, 1.07);
   }
   &:focus {
     outline: none;
     box-shadow: none;
+  }
+}
+
+@media (max-width: 1800px) {
+  .controls {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 1400px) {
+  .list-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 50px 100px;
+    grid-template-areas: ".  ." ".  ." ".  ." ".  ." ".  ." ".  ." ".  ." ".  ." ".  ." ".  .";
+  }
+}
+
+@media (max-width: 850px) {
+  .controls {
+    width: 95vw;
+  }
+
+  .list-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 50px 30px;
+    grid-template-areas: ".  ." ".  ." ".  ." ".  ." ".  ." ".  ." ".  ." ".  ." ".  ." ".  .";
+  }
+}
+
+@media (max-width: 600px) {
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .controls {
+    width: 95vw;
+  }
+
+  .controls-button {
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
   }
 }

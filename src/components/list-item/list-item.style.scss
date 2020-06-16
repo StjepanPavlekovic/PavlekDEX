@@ -5,6 +5,8 @@
   width: 210px;
   transition: transform 0.2s ease-in;
 
+  padding: 20px;
+
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
   -ms-animation: fadein 1s; /* Internet Explorer */
@@ -20,14 +22,14 @@
       transition: transform 1s cubic-bezier(0.17, 0.62, 0.08, 0.9);
     }
     & .name-container {
-      background-color: rgb(202, 201, 201);
+      background-color: rgb(218, 216, 216);
     }
   }
 }
 
 @keyframes move {
   from {
-    transform: translateY(50px);
+    transform: translateY(-50px);
   }
   to {
     transform: translateY(0);
@@ -108,9 +110,13 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: rgb(0, 0, 0);
-  font-size: 1.3em;
+  font-size: 1.25em;
   margin-top: 50px;
   text-align: center;
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
 }
 
 .rounded-container {
@@ -122,4 +128,27 @@
   border-radius: 100%;
   z-index: 1;
   background-color: rgb(218, 228, 227);
+}
+
+@media (max-width: 850px) {
+  .name-container {
+    width: 170px;
+    height: 200px;
+  }
+
+  .listItem-name {
+    font-size: 1.13em;
+  }
+
+  .rounded-container {
+    width: 125px;
+    height: 125px;
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 550px) {
+  .listItem-name {
+    font-size: 1em;
+  }
 }

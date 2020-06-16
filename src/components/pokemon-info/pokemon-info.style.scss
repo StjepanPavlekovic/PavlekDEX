@@ -171,3 +171,34 @@
     }
   }
 }
+
+@media (max-width: 550px) {
+  .popup-background {
+    min-width: 300px;
+  }
+
+  .rounded-container-larger {
+    width: 150px;
+    height: 150px;
+  }
+
+  .btn-close {
+    height: 20px;
+    width: 20px;
+    background-size: 30px 30px;
+  }
+
+  .info {
+    h2 {
+      font-size: 1.3em;
+    }
+
+    span {
+      font-size: 0.9em;
+    }
+
+    th {
+      font-size: 0.8em;
+    }
+  }
+}

@@ -83,21 +83,20 @@ export default class Container extends Component {
           />
         ) : null}
         <div className="controls">
-          {this.state.previous ? (
-            <button
-              className="controls-button"
-              onClick={() => this.loadSet(false)}
-            >
-              Previous
-            </button>
-          ) : null}
-
           {this.state.next ? (
             <button
               className="controls-button"
               onClick={() => this.loadSet(true)}
             >
-              Next
+              {">"}
+            </button>
+          ) : null}
+          {this.state.previous ? (
+            <button
+              className="controls-button"
+              onClick={() => this.loadSet(false)}
+            >
+              {"<"}
             </button>
           ) : null}
         </div>
@@ -113,25 +112,6 @@ export default class Container extends Component {
               />
             );
           })}
-        </div>
-        <div className="controls">
-          {this.state.previous ? (
-            <button
-              className="controls-button"
-              onClick={() => this.loadSet(false)}
-            >
-              Previous
-            </button>
-          ) : null}
-
-          {this.state.next ? (
-            <button
-              className="controls-button"
-              onClick={() => this.loadSet(true)}
-            >
-              Next
-            </button>
-          ) : null}
         </div>
       </div>
     );

@@ -14,6 +14,12 @@
   transition: -webkit-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
   transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  -webkit-animation: fadein 1s;
+  /* Safari, Chrome and Opera > 12.1 */
+  /* Firefox < 16 */
+  /* Internet Explorer */
+  /* Opera < 12.1 */
+  animation: fadein 1s, move 0.5s;
 }
 
 .list-item:hover {
@@ -39,6 +45,53 @@
   background-color: #940a0a;
 }
 
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes move {
+  from {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+
+/* Opera < 12.1 */
+
 .name-container {
   background-color: #b80808;
   height: 180px;
@@ -58,7 +111,9 @@
   width: 210px;
   margin-top: -65px;
   padding-top: 10px;
-  border-top: 3px solid black;
+  z-index: -1;
+  border-radius: 10px;
+  border: 3px solid #383737;
 }
 
 .listItem-sprite {
@@ -70,18 +125,9 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: white;
-  font-size: 1.2em;
-  margin-top: 80px;
-}
-
-.larger-rounded-container {
-  width: 203px;
-  height: 203px;
-  border: 3px solid black;
-  border-radius: 100%;
-  position: absolute;
-  -webkit-transform: translateY(-40px) translateX(0.5px);
-          transform: translateY(-40px) translateX(0.5px);
+  font-size: 1.3em;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .rounded-container {
@@ -93,5 +139,6 @@
   border-radius: 100%;
   z-index: 1;
   background-color: #3b474d;
+  border: 3px solid black;
 }
 /*# sourceMappingURL=bkp.css.map */

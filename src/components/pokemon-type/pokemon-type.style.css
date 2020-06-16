@@ -17,17 +17,59 @@
   padding-top: 20px;
 }
 
+.loader {
+  background-image: url("../../images/pokeball.png");
+  background-size: 50px 50px;
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: rotation 1s infinite linear;
+          animation: rotation 1s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
 .type {
-  border: 1px solid black;
+  border: none;
   width: 60px;
+  height: 20px;
   text-align: center;
-  border-radius: 5px;
   font-weight: 500;
-  font-size: 0.8em;
+  font-size: 0.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .normal {
-  background-color: white;
+  background-color: #ebebeb;
   color: black;
 }
 

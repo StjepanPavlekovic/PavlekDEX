@@ -14,6 +14,13 @@
   transition: -webkit-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
   transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  padding: 20px;
+  -webkit-animation: fadein 1s;
+  /* Safari, Chrome and Opera > 12.1 */
+  /* Firefox < 16 */
+  /* Internet Explorer */
+  /* Opera < 12.1 */
+  animation: fadein 1s, move 0.5s;
 }
 
 .list-item:hover {
@@ -36,12 +43,59 @@
 }
 
 .list-item:hover .name-container {
-  background-color: #940a0a;
+  background-color: #dad8d8;
 }
 
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes move {
+  from {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+
+/* Opera < 12.1 */
+
 .name-container {
-  background-color: #b80808;
-  height: 180px;
+  background-color: white;
+  height: 230px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,8 +113,8 @@
   margin-top: -65px;
   padding-top: 10px;
   z-index: -1;
-  border-radius: 10px;
-  border: 3px solid #383737;
+  -webkit-box-shadow: 6px 8px 22px 2px rgba(0, 0, 0, 0.42);
+  box-shadow: 6px 8px 22px 2px rgba(0, 0, 0, 0.42);
 }
 
 .listItem-sprite {
@@ -71,9 +125,13 @@
 .listItem-name {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  color: white;
-  font-size: 1.3em;
+  color: black;
+  font-size: 1.25em;
   margin-top: 50px;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
 }
 
 .rounded-container {
@@ -84,7 +142,28 @@
   height: 130px;
   border-radius: 100%;
   z-index: 1;
-  background-color: #3b474d;
-  border: 3px solid black;
+  background-color: #dae4e3;
+}
+
+@media (max-width: 850px) {
+  .name-container {
+    width: 170px;
+    height: 200px;
+  }
+  .listItem-name {
+    font-size: 1.13em;
+  }
+  .rounded-container {
+    width: 125px;
+    height: 125px;
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 550px) {
+  .listItem-name {
+    font-size: 1em;
+  }
 }
 /*# sourceMappingURL=list-item.style.css.map */

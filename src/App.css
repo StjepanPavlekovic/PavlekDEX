@@ -18,8 +18,11 @@
 }
 
 .left-pillar {
-  height: auto;
-  width: 20vw;
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 250px;
   background: rgb(233, 251, 255);
   background: linear-gradient(
     90deg,
@@ -29,8 +32,11 @@
 }
 
 .right-pillar {
-  height: auto;
-  width: 20vw;
+  z-index: -2;
+  right: 0;
+  height: 100%;
+  position: fixed;
+  width: 250px;
   background: rgb(233, 251, 255);
   background: linear-gradient(
     270deg,
@@ -55,7 +61,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-160%);
+    transform: translateX(-180%);
   }
 }
 
@@ -76,7 +82,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(160%);
+    transform: translateX(180%);
   }
 }
 
@@ -99,5 +105,12 @@
   }
   to {
     transform: rotate(359deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .left-pillar,
+  .right-pillar {
+    width: 130px;
   }
 }
