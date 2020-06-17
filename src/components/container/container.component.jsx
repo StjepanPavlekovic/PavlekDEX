@@ -40,7 +40,11 @@ export default class Container extends Component {
         this.setState((state, props) => {
           return {
             pokemon: data.results,
-            next: data.next,
+            next:
+              data.next ===
+              "https://pokeapi.co/api/v2/pokemon?offset=960&limit=4"
+                ? "https://pokeapi.co/api/v2/pokemon?offset=960&limit=20"
+                : data.next,
             previous: data.previous,
           };
         });
